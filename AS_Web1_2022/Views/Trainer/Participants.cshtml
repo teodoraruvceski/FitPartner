@@ -1,0 +1,31 @@
+﻿@using AS_Web1_2022.Models
+@model IEnumerable<User>
+<table border="1">
+    <tr>
+        <th>Username</th>
+        <th>Name</th>
+        <th>Lastname</th>
+        <th>Birthdate</th>
+        <th>Email</th>
+    </tr>
+
+    @foreach (User u in Model)
+    {
+
+        if (!u.Deleted && !u.Blocked)
+        {
+            <tr>
+                <td>@u.Username</td>
+                <td>@u.Name</td>
+                <td>@u.Lastname</td>
+                <td>@u.Birthdate.ToString("dd.MM.yy.\n HH:mm")</td>
+                <td>@u.Email</td>
+ </tr>
+        }
+
+
+    }
+
+
+</table>
+

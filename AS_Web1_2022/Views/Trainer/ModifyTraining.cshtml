@@ -1,0 +1,21 @@
+﻿@using AS_Web1_2022.Models
+@model Training
+<form action="~/Trainer/ModifyTrainingRequest" method="post">
+    Name: <input type="text" name="Name" readonly value="@Model.Name"/></br>
+    Training type: <select name="typeOfTrainingSession">
+        <option value="@Model.TrainingType.ToString()"></option>
+        <option value="Box">Box</option>
+        <option value="Judo">Judo</option>
+        <option value="BodyBuilding">BodyBuilding</option>
+        <option value="CardioKickBox">CardioKickBox</option>
+        <option value="WomenBodyBuilding">WomenBodyBuilding</option>
+        <option value="MMA">MMA</option>
+    </select></br>
+    Max participants: <input type="number" value="@Model.MaxParticipants" name="MaxParticipants" /></br>
+    Date and time:<input type="datetime-local" value="@Model.Datetime" name="Datetime" /></br>
+    Duration: <input type="number" name="Duration" value="@Model.Duration" />
+    <input type="submit" value="Save modifications" />
+</form>
+<p>@ViewBag.ErrorMessage</p>
+
+

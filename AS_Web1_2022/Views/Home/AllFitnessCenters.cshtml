@@ -1,0 +1,64 @@
+﻿@using AS_Web1_2022.Models;
+@model IEnumerable<FitnessCenter>
+<table border="1">
+    <tr>
+        <td>
+            <form method="post" action="~/Home/SortFitnessCenters">
+                Sort:
+                By <select name="by">
+                    <option value=""></option>
+                    <option value="name">name</option>
+                    <option value="openingYear">openingYear</option>
+                    <option value="address">address</option>
+                </select><br />
+                                Type <select name="type">
+                    <option value=""></option>
+                    <option value="ascending">ascending</option>
+                    <option value="descending">descending</option>
+                </select>
+                <input type="submit" value="Sort" /><br />
+            </form>
+        </td>
+        <td>
+            <form action="~/Home/SearchFitnessCenters">
+
+                Name <input type="text" name="name" /><br />
+                Address <input type="text" name="address" /><br />
+                Opening year from <input type="text" name="openingYearFrom" /><br /> to <input type="text" name="openingYearTo" /><br />
+
+                <input type="submit" value="Search" />
+
+            </form>
+        </td>
+    </tr>
+</table>
+</br>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Opening year</th>
+    </tr>
+    @foreach (var fc in Model)
+    {
+        if (fc.Deleted)
+        {
+            continue;
+        }
+        <tr>
+            <td>@fc.Name</td>
+            <td>@fc.Address</td>
+            <td>@fc.OpeningYear</td>
+            <td>
+                <form method="post" action="~/Home/More">
+                    <input type="text" name="fitnessCenter" value="@fc.Name" hidden />
+                    <input type="submit" value="More" />
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+<p>@ViewBag.Message</p>
+
+
+

@@ -1,0 +1,97 @@
+﻿@using AS_Web1_2022.Models
+@model IEnumerable<Training>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Training type</th>
+        <th>Duration</th>
+        <th>Date and time</th>
+        <th>Max number of participants</th>
+    </tr>
+
+    @foreach (Training t in Model)
+    {
+
+        if (!t.Deleted )
+        {
+<tr>
+    <td>@t.Name</td>
+    <td>@t.TrainingType.ToString()</td>
+    <td>@t.Duration</td>
+    <td>@t.Datetime.ToString("dd.MM.yy.\n HH:mm")</td>
+    <td>@t.MaxParticipants</td>
+
+
+    @if (t.Participants.Count == 0 && t.Datetime>DateTime.Now)
+    {
+        <td>
+            <form action="~/Trainer/DeleteTraining">
+                <input type="text" value="@t.Name" hidden name="name" />
+                <input type="submit" value="X" />
+            </form>
+        </td>
+    }
+    @if (t.Datetime > DateTime.Now)
+    {
+        <td>
+            <form action="~/Trainer/ModifyTraining">
+                <input type="text" value="@t.Name" hidden name="name" />
+                <input type="submit" value="Modify" />
+            </form>
+        </td>
+    }
+    <td>
+        <form action="~/Trainer/Participants">
+            <input type="text" value="@t.Name" hidden name="name" />
+            <input type="submit" value="See participants" />
+        </form>
+    </td>
+
+</tr>
+        }
+
+
+    }
+
+
+</table>
+<br />
+<table border="1">
+    <tr>
+        <td>
+            <form method="post" action="~/Trainer/SortTraining">
+                Sort:
+                By <select name="by">
+                    <option value=""></option>
+                    <option value="type">type</option>
+                    <option value="datetime">datetime</option>
+                </select><br />
+                Type <select name="type">
+                    <option value=""></option>
+                    <option value="ascending">ascending</option>
+                    <option value="descending">descending</option>
+                </select>
+                <input type="submit" value="Sort" /><br />
+            </form>
+        </td>
+        <td>
+            <form action="~/Trainer/SearchTraining">
+
+                Name <input type="text" name="name" /><br />
+                Type <input type="text" name="type" /><br />
+                Fitness Center <input type="text" name="fitnessCenter" /><br />
+
+                <input type="submit" value="Search" />
+
+            </form>
+        </td>
+
+    </tr>
+</table>
+<form action="~/Trainer/AddTraining"><input type="submit" value="add training" /></form>
+<p>@ViewBag.Massage </p>
+
+
+
+
+

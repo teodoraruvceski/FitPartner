@@ -1,0 +1,27 @@
+﻿@using AS_Web1_2022.Models
+@model User
+
+<form action="~/Visitor/ChangeProfileInformation" method="post">
+    Username: <input type="text" name="Username" value="@Model.Username" readonly /></br>
+    Name: <input type="text" name="Name" value="@Model.Name" /></br>
+    Lastname:<input type="text" name="Lastname" value="@Model.Lastname" /></br>
+    Gender:
+            <select name="userGender">
+                @if (Model.Gender == gen.female)
+                {
+                    <option selected value="female">female</option>
+                    <option value="male">male</option>
+                }
+                else
+                {
+                    <option  value="female">female</option>
+                    <option selected value="male">male</option>
+                }
+
+            </select>
+   </br>
+    Email:<input type="text" name="Email" value="@Model.Email" /></br>
+    Birthdate: @Model.Birthdate.ToString("dd.MM.yyy.") <input type="date" name="Birthdate"  value="@Model.Birthdate"/></br>
+    <input type="submit" value="Save changes" />
+</form>
+<p>@ViewBag.ErrorMessage</p>

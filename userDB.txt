@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<ArrayOfUser xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <User>
+    <Username>cloee</Username>
+    <Password>cloee</Password>
+    <Name>cloee</Name>
+    <Lastname>cloee</Lastname>
+    <Email>cloee@yahoo.com</Email>
+    <Birthdate>2022-03-08T00:00:00</Birthdate>
+    <Gender>female</Gender>
+    <Role>visitor</Role>
+    <Deleted>false</Deleted>
+    <AttendingTrainings>
+      <string>222</string>
+    </AttendingTrainings>
+    <HoldingTrainings />
+    <MyFitnessCenters />
+    <Blocked>false</Blocked>
+  </User>
+  <User>
+    <Username>sam</Username>
+    <Password>sam</Password>
+    <Name>sam</Name>
+    <Lastname>sam</Lastname>
+    <Email>sam</Email>
+    <Birthdate>9999-12-31T23:59:59.9999999</Birthdate>
+    <Gender>female</Gender>
+    <Role>owner</Role>
+    <Deleted>false</Deleted>
+    <Workplace />
+    <AttendingTrainings />
+    <HoldingTrainings />
+    <MyFitnessCenters>
+      <string>fitStar</string>
+      <string>fc1</string>
+      <string>fc2</string>
+    </MyFitnessCenters>
+    <Blocked>false</Blocked>
+  </User>
+  <User>
+    <Username>bob</Username>
+    <Password>bob</Password>
+    <Name>bob</Name>
+    <Lastname>bob</Lastname>
+    <Email>bob</Email>
+    <Birthdate>9999-12-31T23:59:59.9999999</Birthdate>
+    <Gender>male</Gender>
+    <Role>trainer</Role>
+    <Deleted>false</Deleted>
+    <Workplace>fitStar</Workplace>
+    <AttendingTrainings />
+    <HoldingTrainings>
+      <string>cardio1</string>
+      <string>222</string>
+      <string>bbb</string>
+      <string>eeee</string>
+    </HoldingTrainings>
+    <MyFitnessCenters />
+    <Blocked>false</Blocked>
+  </User>
+  <User>
+    <Username>david</Username>
+    <Password>david</Password>
+    <Name>davidddd</Name>
+    <Lastname>david</Lastname>
+    <Email>david@yahoo.com</Email>
+    <Birthdate>2022-08-30T00:00:00</Birthdate>
+    <Gender>male</Gender>
+    <Role>visitor</Role>
+    <Deleted>false</Deleted>
+    <Workplace />
+    <AttendingTrainings>
+      <string>Box1</string>
+      <string>222</string>
+      <string>eeee</string>
+    </AttendingTrainings>
+    <HoldingTrainings />
+    <MyFitnessCenters />
+    <Blocked>false</Blocked>
+  </User>
+  <User>
+    <Username>sssss</Username>
+    <Password>sssss</Password>
+    <Name>sssss</Name>
+    <Lastname>sssss</Lastname>
+    <Email>sssss@gmail.com</Email>
+    <Birthdate>2022-04-06T00:00:00</Birthdate>
+    <Gender>male</Gender>
+    <Role>visitor</Role>
+    <Deleted>false</Deleted>
+    <AttendingTrainings>
+      <string>eeee</string>
+    </AttendingTrainings>
+    <HoldingTrainings />
+    <MyFitnessCenters />
+    <Blocked>false</Blocked>
+  </User>
+<User>
+    <Username>emma</Username>
+    <Password>emma</Password>
+    <Name>emma</Name>
+    <Lastname>emma</Lastname>
+    <Email>emma@yahoo.com</Email>
+    <Birthdate>1998-12-31T23:59:59.9999999</Birthdate>
+    <Gender>female</Gender>
+    <Role>owner</Role>
+    <Deleted>false</Deleted>
+    <Workplace />
+    <AttendingTrainings />
+    <HoldingTrainings />
+    <MyFitnessCenters>
+    </MyFitnessCenters>
+    <Blocked>false</Blocked>
+  </User>
+</ArrayOfUser>

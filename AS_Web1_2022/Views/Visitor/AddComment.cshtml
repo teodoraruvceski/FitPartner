@@ -1,0 +1,10 @@
+﻿@using AS_Web1_2022.Models
+@model Comment
+<form action="~/Visitor/AddCommentRequest">
+    Comment description <input type="text" name="CommentText" /></br>
+    Rating <input type="number" name="Rating" /></br>
+    Fitness center <input type="text" name="FitnessCenter" /></br>
+    <input type="submit" value="Submit" />
+</form>
+@ViewBag.ErrorMessage
+

@@ -1,0 +1,94 @@
+﻿@using AS_Web1_2022.Models;
+@model FitnessCenter
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Owner</th>
+        <th>Opening Year</th>
+        <th>Monthly Membership</th>
+        <th>Annual Membership</th>
+        <th>Training session price</th>
+        <th>Group training session price</th>
+        <th>Personal training session price</th>
+    </tr>
+    <tr>
+        <td>@Model.Name</td>
+        <td>@Model.Address</td>
+        <td>@Model.Owner</td>
+        <td>@Model.OpeningYear</td>
+        <td>@Model.MonthlyMembership $</td>
+        <td>@Model.AnnualMembership $</td>
+        <td>@Model.TrainingPrice $</td>
+        <td>@Model.GroupTrainingPrice $</td>
+        <td>@Model.TrainingWithPersonalTrainerPrice $</td>
+    </tr>
+</table>
+</br>
+
+<table border="1">
+    <tr><th colspan="5">Group training sessions</th></tr>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Duration</th>
+        <th>Date and time</th>
+        <th>Max number of participans</th>
+    </tr>
+    @{
+        List<Training> grouptrainings = AllData.RetrieveAllTrainings();
+        User user = (User)Session["user"];
+    }
+    @foreach (Training t in grouptrainings)
+    {
+        if (t.Deleted || t.FitnessCentar.Replace("\n","") != Model.Name)
+        { continue; }
+        if(((User)Session["user"])==null && t.Datetime<DateTime.Now)
+        { continue; }
+        <tr>
+            <td>@t.Name</td>
+            <td>@t.TrainingType.ToString()</td>
+            <td>@t.Duration</td>
+            <td>@t.Datetime.ToString("dd/MM/yyyy HH:mm")</td>
+            <td>@t.MaxParticipants</td>
+            @if (user == null || 
+                user.Role != role.visitor || 
+                t.Datetime<DateTime.Now || 
+                t.Participants.Count==t.MaxParticipants ||
+                t.Participants.Contains(user.Username))
+            { continue; }
+            <td>
+                <form action="~/Visitor/Join">
+                    <input type="text" name="trainingName" value="@t.Name" hidden />
+                    <input type="submit" value="Join" />
+                </form>
+            </td>
+        </tr>
+
+    }
+</table>
+<table border="1">
+    <tr>
+        <theader>Comments</theader>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <th>Rate</th>
+        <th>User</th>
+    </tr>
+    @foreach(Comment c in AllData.RetrieveAllComments())
+    {
+        if((!c.Declined && !c.Accepted) || (c.Declined && !c.Accepted))
+        { continue; }
+                <tr>
+                    <td>@c.CommentText</td>
+                    <td>@c.Rating</td>
+                    <td>@c.Username</td>
+                </tr>
+            }
+</table>
+<p>@ViewBag.Massage </p>
+
+
+

@@ -1,0 +1,39 @@
+﻿@using AS_Web1_2022.Models
+@model IEnumerable<Comment>
+<table border="1">
+    <tr>
+        <theader>Comments</theader>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <th>Rate</th>
+        <th>User</th>
+    </tr>
+    @foreach (Comment c in Model)
+    {
+       
+<tr>
+    <td>@c.CommentText</td>
+    <td>@c.Rating</td>
+    <td>@c.Username</td>
+    @if (!c.Declined && !c.Accepted)
+    {
+        <td>
+            <form method="post" action="~/Owner/Accept">
+                <input type="text" name="c" value="@(c.Username+c.FitnessCenter)" hidden />
+                <input type="submit" value="Yes" />
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Owner/Decline">
+                <input type="text" name="c" value="@(c.Username+c.FitnessCenter)" hidden />
+                <input type="submit" value="No" />
+            </form>
+        </td>
+    }
+
+</tr>
+    }
+</table>
+<p>@ViewBag.Massage </p>
+

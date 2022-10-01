@@ -1,0 +1,18 @@
+﻿@using AS_Web1_2022.Models
+@model User
+<form action="~/Home/RegistrationRequest" method="post">
+    Username: <input type="text" name="Username" /></br>
+    Password: <input type="password" name="Password" /></br>
+    Name: <input type="text" name="Name" /></br>
+    Lastname:<input type="text" name="Lastname" /></br>
+    Gender: <input class="datalist" list="gens" name="usersGender" />
+    <datalist id="gens">
+        <option value="female"></option>
+        <option value="male"></option>
+    </datalist></br>
+    Email:<input type="text" name="Email" /></br>
+    Birthdate:<input type="date" name="Birthdate" /></br>
+    <input type="submit" value="Register" />
+</form>
+<p>@ViewBag.ErrorMessage</p>
+

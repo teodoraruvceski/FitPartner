@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ArrayOfComment xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Comment>
+    <CommentText>good</CommentText>
+    <Rating>5</Rating>
+    <Declined>false</Declined>
+    <Accepted>true</Accepted>
+    <Username>david</Username>
+    <FitnessCenter>fitStar</FitnessCenter>
+  </Comment>
+  <Comment>
+    <CommentText>blabla</CommentText>
+    <Rating>5</Rating>
+    <Declined>false</Declined>
+    <Accepted>true</Accepted>
+    <Username>cloee</Username>
+    <FitnessCenter>fitStar</FitnessCenter>
+  </Comment>
+  <Comment>
+    <CommentText>comm</CommentText>
+    <Rating>2</Rating>
+    <Declined>false</Declined>
+    <Accepted>false</Accepted>
+    <Username>sssss</Username>
+    <FitnessCenter>fitStar</FitnessCenter>
+  </Comment>
+</ArrayOfComment>

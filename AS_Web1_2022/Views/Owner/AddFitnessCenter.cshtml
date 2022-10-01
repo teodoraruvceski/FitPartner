@@ -1,0 +1,16 @@
+﻿@using AS_Web1_2022.Models
+@model FitnessCenter
+<form action="~/Owner/AddFitnessCenterRequest" method="post">
+    Name: <input type="text" name="Name" /></br>
+    Address: <input type="text" name="Address" /></br>
+    Opening year: <input type="number" name="OpeningYear" /></br>
+    Monthly membership:<input type="number" name="MonthlyMembership" /></br>
+    Annual membership: <input class="number" list="gens" name="AnnualMembership" />
+  
+    Training price:<input type="number" name="TrainingPrice" /></br>
+    Group training price:<input type="number" name="GroupTrainingPrice" /></br>
+    Training with personal trainer price: <input type="number" name="TrainingWithPersonalTrainerPrice" /></br>
+    <input type="submit" value="Add fitness center" />
+</form>
+<p>@ViewBag.ErrorMessage</p>
+

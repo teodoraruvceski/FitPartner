@@ -1,0 +1,16 @@
+﻿@using AS_Web1_2022.Models
+@model FitnessCenter
+<form action="~/Owner/ModifyFitnessCenterRequest" method="post">
+    Name: <input type="text" name="Name" readonly value="@Model.Name"/></br>
+    Address: <input type="text" name="Address" value="@Model.Address"/></br>
+    Opening year: <input type="number" name="OpeningYear" value="@Model.OpeningYear"/></br>
+    Monthly membership:<input type="number" name="MonthlyMembership" value="@Model.MonthlyMembership"/></br>
+    Annual membership: <input class="number" list="gens" name="AnnualMembership" value="@Model.AnnualMembership"/>
+  
+    Training price:<input type="number" name="TrainingPrice" value="@Model.TrainingPrice"/></br>
+    Group training price:<input type="number" name="GroupTrainingPrice" value="@Model.GroupTrainingPrice"/></br>
+    Training with personal trainer price: <input type="number" value="@Model.TrainingWithPersonalTrainerPrice" name="TrainingWithPersonalTrainerPrice" /></br>
+    <input type="submit" value="Save changes" />
+</form>
+<p>@ViewBag.ErrorMessage</p>
+
